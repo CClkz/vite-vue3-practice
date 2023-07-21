@@ -1,9 +1,17 @@
 <template>
   <div id="msg">{{ msg }}</div>
   <div>name:{{ student.name }}</div>
+  <div>test2:{{ o2.count }}{{ s2.count }}</div>
 </template>
 <script setup lang="ts">
 import { reactive, shallowReactive, isReactive, ref, nextTick } from 'vue'
+
+const SPLIT = '##########'
+
+console.log(SPLIT, '测试ref')
+/**
+ * ref
+ */
 const msg = ref('1')
 // 深层响应式
 const hero = reactive({ name: 'super' })
@@ -19,10 +27,13 @@ setTimeout(() => {
   nextTick(() => {
     console.log('msg html', document.querySelector('#msg')?.innerHTML)
   })
-}, 5000)
+}, 2000)
 
+console.log(SPLIT, '测试reactive')
+/**
+ * reactive
+ */
 let student = reactive({ name: 'c' })
-
 setTimeout(() => {
   student = reactive({ name: 'd' })
   student.name = 'e'
@@ -35,9 +46,16 @@ const state = shallowReactive({
     bar: 2
   }
 })
-
 console.log(isReactive(msg.value))
 console.log(isReactive(state))
 console.log(isReactive(state.foo))
 console.log(isReactive(state.nested))
+
+console.log(SPLIT, '测试reactive和原始对象')
+const o2 = { count: 0 }
+const s2 = reactive(o2)
+nextTick(() => {
+  o2.count++
+  console.log(s2.count)
+})
 </script>
