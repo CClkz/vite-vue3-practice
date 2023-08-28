@@ -58,4 +58,14 @@ nextTick(() => {
   o2.count++
   console.log(s2.count)
 })
+
+console.log(SPLIT, '测试reacttive使用ref')
+const ref3 = ref(0)
+const react3 = reactive({
+  count: ref3
+})
+ref3.value = 1
+console.log('react3.count', react3.count)
+react3.count = 2
+console.log('ref3', ref3.value)
 </script>

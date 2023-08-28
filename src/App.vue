@@ -1,11 +1,14 @@
 <script setup lang="ts">
 // import HelloWorld from "./components/HelloWorld.vue";
-import reacitiveCom from './components/reactive.vue'
+// import reacitiveCom from './components/reactive.vue'
+import computedCom from './components/computed.vue'
+
 </script>
 
 <template>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <reacitive-com></reacitive-com>
+  <!-- <reacitive-com></reacitive-com> -->
+  <computedCom></computedCom>
 </template>
 
 <style scoped>
