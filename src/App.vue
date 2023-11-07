@@ -1,14 +1,18 @@
 <script setup lang="ts">
 // import HelloWorld from "./components/HelloWorld.vue";
 // import reacitiveCom from './components/reactive.vue'
-import computedCom from './components/computed.vue'
+// import computedCom from './components/computed.vue'
+console.log('enter app');
+import { useRoute } from "vue-router"
+console.log('app useRoute', useRoute());
 
 </script>
 
 <template>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <!-- <reacitive-com></reacitive-com> -->
-  <computedCom></computedCom>
+  <!-- <computedCom></computedCom> -->
+  <router-view></router-view>
 </template>
 
 <style scoped>
